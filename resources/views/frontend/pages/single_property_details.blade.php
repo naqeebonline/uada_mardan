@@ -850,8 +850,8 @@ body {
 
 
 
-<script type="text/javascript" src="http://www.eauction.lcbkp.gov.pk/js/jquery.countdownTimer.js"></script>
-<link rel="stylesheet" type="text/css" href="http://www.eauction.lcbkp.gov.pk/js/jquery.countdownTimer.css" />
+<script type="text/javascript" src="{{asset('js/jquery.countdownTimer.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('js/jquery.countdownTimer.css')}}" />
 <script>
     plaza_id = "{{$plaza_id}}";
     auction_id = "{{$auction_id}}";

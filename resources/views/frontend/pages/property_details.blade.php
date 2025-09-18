@@ -227,8 +227,8 @@ Listing – grid view -->
         </div>
     </div>
 </section>
-<script type="text/javascript" src="http://www.eauction.lcbkp.gov.pk/js/jquery.countdownTimer.js"></script>
-<link rel="stylesheet" type="text/css" href="http://www.eauction.lcbkp.gov.pk/js/jquery.countdownTimer.css" />
+<script type="text/javascript" src="{{asset('js/jquery.countdownTimer.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('js/jquery.countdownTimer.css')}}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.28/sweetalert2.min.css" integrity="sha512-IScV5kvJo+TIPbxENerxZcEpu9VrLUGh1qYWv6Z9aylhxWE4k4Fch3CHl0IYYmN+jrnWQBPlpoTVoWfSMakoKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.28/sweetalert2.min.js" integrity="sha512-CyYoxe9EczMRzqO/LsqGsDbTl3wBj9lvLh6BYtXzVXZegJ8VkrKE90fVZOk1BNq3/9pyg+wn+TR3AmDuRjjiRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
