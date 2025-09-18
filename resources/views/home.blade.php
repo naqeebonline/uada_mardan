@@ -359,9 +359,9 @@
                                     <div class="property-lable">
                                         <span class="badge badge-md badge-primary">{{ucfirst($value->property_type)}}</span>
                                     </div>
-                                    <div class="property-agent-popup">
+                                    <div class="">
                                         <a href="{{url("property-details/$value->auction_id/$value->plaza_id")}}">
-                                            <i class="fas fa-camera"></i> {{$value->totalImages}}
+                                             {{$value->totalImages}}
                                         </a>
                                     </div>
                                 </a>
