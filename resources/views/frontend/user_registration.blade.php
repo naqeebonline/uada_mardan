@@ -28,7 +28,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
             min-height: 100vh;
             padding: 20px 0;
         }
@@ -51,13 +51,13 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #27a844, #28a745, #20c997);
         }
 
         .header-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
             color: white;
-            padding: 40px;
+            padding: 11px;
             text-align: center;
             border-radius: 20px 20px 0 0;
         }
@@ -96,7 +96,7 @@
             left: 0;
             width: 60px;
             height: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #27a844, #28a745, #20c997);
         }
 
         .form-group {
@@ -129,8 +129,8 @@
 
         .form-control:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #28a745;
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.15);
             transform: translateY(-1px);
         }
 
@@ -158,12 +158,12 @@
         }
 
         .file-input-display:hover {
-            border-color: #667eea;
+            border-color: #28a745;
             background: #edf2f7;
         }
 
         .file-input-display i {
-            color: #667eea;
+            color: #28a745;
             margin-right: 10px;
             font-size: 18px;
         }
@@ -182,7 +182,7 @@
         }
 
         .alert-success {
-            background: linear-gradient(135deg, #48bb78, #38a169);
+            background: linear-gradient(135deg, #28a745, #20c997);
             color: white;
         }
 
@@ -192,7 +192,7 @@
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
             border: none;
             border-radius: 12px;
             color: white;
@@ -206,7 +206,7 @@
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
         }
 
         .btn-cancel {
@@ -242,7 +242,7 @@
         }
 
         .footer-links a {
-            color: #667eea;
+            color: #28a745;
             text-decoration: none;
             font-weight: 500;
         }
@@ -321,8 +321,8 @@ if(session()->has('show_popup')){
     <div class="registration-container">
         <!-- Header Section -->
         <div class="header-section">
-            <h1><i class="fas fa-user-plus me-3"></i>Customer Registration</h1>
-            <p class="subtitle">کسٹمر رجسٹریشن فارم - Create your account to get started</p>
+            <h5><i class="fas fa-user-plus me-3"></i>Customer Registration</h5>
+            <p class="subtitle">کسٹمر رجسٹریشن فارم </p>
         </div>
 
         <!-- Form Section -->

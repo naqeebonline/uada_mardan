@@ -32,15 +32,243 @@
     }
     
     .blink_me {
-  animation: blinker 1s linear infinite;
-}
+        animation: blinker 1s linear infinite;
+    }
 
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
 
+    /* Professional Green Theme Property Cards */
+    .property-item.property-col-list {
+        background: linear-gradient(135deg, #f8fcf9 0%, #e8f5e8 100%) !important;
+        border: 1px solid #27a844 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 15px rgba(39, 168, 68, 0.12), 0 2px 6px rgba(39, 168, 68, 0.08) !important;
+        transition: all 0.3s ease !important;
+        overflow: hidden !important;
+        position: relative !important;
+        margin-bottom: 12px !important;
+    }
+
+    .property-item.property-col-list:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(39, 168, 68, 0.15), 0 3px 8px rgba(39, 168, 68, 0.12) !important;
+        border-color: #1e7e34 !important;
+    }
+
+    .property-item.property-col-list::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #27a844, #28a745, #20c997);
+        z-index: 1;
+    }
+
+    .property-details {
+        background: rgba(255, 255, 255, 0.8) !important;
+        padding: 10px 15px !important;
+        border-radius: 0 6px 6px 0 !important;
+    }
+
+    .property-title a {
+        color: #1e7e34 !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+        font-size: 16px !important;
+        line-height: 1.2 !important;
+    }
+
+    .property-title a:hover {
+        color: #155724 !important;
+    }
+
+    .property-title {
+        margin-bottom: 8px !important;
+    }
+
+    .property-price.blink_me {
+        background: linear-gradient(135deg, #28a745, #20c997) !important;
+        color: white !important;
+        padding: 4px 10px !important;
+        border-radius: 15px !important;
+        display: inline-block !important;
+        font-weight: bold !important;
+        font-size: 14px !important;
+        box-shadow: 0 2px 6px rgba(40, 167, 69, 0.3) !important;
+        margin: 5px 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    .property-m-sqft, .property-address {
+        color: #495057 !important;
+        margin: 2px 0 !important;
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+    }
+
+    .property-m-sqft i, .property-address i {
+        color: #28a745 !important;
+        margin-right: 8px !important;
+    }
+
+    .label {
+        padding: 3px 8px !important;
+        border-radius: 12px !important;
+        font-size: 11px !important;
+        font-weight: 500 !important;
+        margin: 1px !important;
+        display: inline-block !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        line-height: 1.2 !important;
+    }
+
+    .label-success {
+        background: #28a745 !important;
+        color: white !important;
+    }
+
+    .label-success:hover {
+        background: #218838 !important;
+        transform: scale(1.05) !important;
+    }
+
+    .label-primary {
+        background: #007bff !important;
+        color: white !important;
+    }
+
+    .label-primary:hover {
+        background: #0069d9 !important;
+        transform: scale(1.05) !important;
+    }
+
+    .label-warning {
+        background: #ffc107 !important;
+        color: #212529 !important;
+    }
+
+    .label-warning:hover {
+        background: #e0a800 !important;
+        transform: scale(1.05) !important;
+    }
+
+    .submit_bid_amount {
+        background: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 6px !important;
+        padding: 8px !important;
+        box-shadow: 0 1px 4px rgba(39, 168, 68, 0.1) !important;
+    }
+
+    .submit_bid_amount input.form-control {
+        border: 1px solid #28a745 !important;
+        border-radius: 6px !important;
+        padding: 8px 10px !important;
+        transition: border-color 0.3s ease !important;
+        font-size: 14px !important;
+    }
+
+    .submit_bid_amount input.form-control:focus {
+        border-color: #20c997 !important;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+    }
+
+    .btn.place_bid {
+        background: linear-gradient(135deg, #ffc107, #ffca28) !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 6px rgba(255, 193, 7, 0.3) !important;
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+    }
+
+    .btn.place_bid:hover {
+        background: linear-gradient(135deg, #e0a800, #ffb300) !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 3px 8px rgba(255, 193, 7, 0.4) !important;
+    }
+
+    .property-image {
+        border-radius: 6px 0 0 6px !important;
+        overflow: hidden !important;
+        height: 120px !important;
+    }
+
+    .property-image img {
+        height: 120px !important;
+        object-fit: cover !important;
+    }
+
+    .badge-primary {
+        background: #28a745 !important;
+        color: white !important;
+        border-radius: 10px !important;
+        padding: 3px 8px !important;
+        font-weight: 500 !important;
+        font-size: 10px !important;
+    }
+
+    #word {
+        color: #28a745 !important;
+        font-size: 11px !important;
+        font-weight: 500 !important;
+        margin-top: 3px !important;
+        line-height: 1.2 !important;
+    }
+
+    .property-details-inner {
+        padding: 0 !important;
+    }
+
+    .property-details-inner-box {
+        margin-bottom: 0 !important;
+    }
+
+    .table.submit_bid_amount {
+        margin-bottom: 0 !important;
+    }
+
+    /* Single line property info layout */
+    .property-info-single-line {
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        margin: 8px 0 !important;
+    }
+
+    .info-item {
+        color: #495057 !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+    }
+
+    .info-item i {
+        color: #28a745 !important;
+        margin-right: 4px !important;
+        font-size: 10px !important;
+    }
+
+    .info-separator {
+        color: #28a745 !important;
+        font-weight: bold !important;
+        margin: 0 2px !important;
+        font-size: 12px !important;
+    }
+
+    .property-info-single-line .label {
+        margin-left: 4px !important;
+    }
 </style>
 <!--=================================
 breadcrumb -->
@@ -118,17 +346,19 @@ Listing – grid view -->
                                             <div class="property-details-inner-box">
                                                 <div class="property-details-inner-box-left">
                                                     <h4 class="property-title"><a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}">{{$value->shop_name}} </a></h4>
-                                                    <div class="property-price blink_me" style="font-size: 20px !important; color:red !important;">{{$value->premium}} /{{$value->future_use}} in PKR</span> </div>
+                                                    <div class="property-price blink_me" style="font-size: 20px !important; color:black !important;">{{$value->premium}} /{{$value->future_use}} in PKR</span> </div>
                                                      
-                                                    <span class="flex-fill property-m-sqft"><i class="far fa-square"></i>{{$value->org_name}} </span>
-                                                    <br>
-                                                   <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>{{$value->location}}</span>
-                                                    <br>
-                                                    <span class="flex-fill property-m-sqft"><i class="far fa-square"></i>Total area in sqft:{{$value->coveredarea}}</span>
-                                                    <br>
-                                                    <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-success" >Details</span></a>
-                                                    <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-primary">Bidders ({{$value->totalBidders}})</span></a>
-                                                    <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-warning">Bids ({{$value->totalBidds}})</span></a>
+                                                    <div class="property-info-single-line">
+                                                        <span class="info-item"><i class="far fa-square"></i>{{$value->org_name}}</span>
+                                                        <span class="info-separator">•</span>
+                                                        <span class="info-item"><i class="fas fa-map-marker-alt"></i>{{$value->location}}</span>
+                                                        <span class="info-separator">•</span>
+                                                        <span class="info-item"><i class="far fa-square"></i>{{$value->coveredarea}} sqft</span>
+                                                        <span class="info-separator">•</span>
+                                                        <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-success">Details</span></a>
+                                                        <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-primary">Bidders ({{$value->totalBidders}})</span></a>
+                                                        <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-warning">Bids ({{$value->totalBidds}})</span></a>
+                                                    </div>
                                                  <div class="col-md-2"> 
                                                 
                                                  </div>

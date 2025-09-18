@@ -10,14 +10,14 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             margin-bottom: 30px;
-            border: 1px solid rgba(168, 195, 86, 0.1);
+            border: 1px solid rgba(45, 106, 47, 0.1);
             position: relative;
         }
 
         .property-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(168, 195, 86, 0.25);
-            border-color: rgba(168, 195, 86, 0.3);
+            box-shadow: 0 20px 60px rgba(45, 106, 47, 0.25);
+            border-color: rgba(74, 140, 82, 0.3);
         }
 
         .property-image {
@@ -45,7 +45,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(168, 195, 86, 0.1), rgba(143, 181, 63, 0.2));
+            background: linear-gradient(45deg, rgba(45, 106, 47, 0.1), rgba(74, 140, 82, 0.2));
             opacity: 0;
             transition: opacity 0.4s ease;
             z-index: 1;
@@ -63,7 +63,7 @@
         }
 
         .badge-primary {
-            background: linear-gradient(135deg, #a8c356, #8fb53f) !important;
+            background: linear-gradient(135deg, #2d6a2f, #4a8c52) !important;
             color: white !important;
             padding: 8px 16px;
             border-radius: 25px;
@@ -71,7 +71,7 @@
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(168, 195, 86, 0.3);
+            box-shadow: 0 4px 15px rgba(45, 106, 47, 0.3);
         }
 
         .property-agent-popup {
@@ -95,7 +95,7 @@
         }
 
         .property-agent-popup a:hover {
-            background: #a8c356;
+            background: #4a8c52;
             color: white !important;
             transform: scale(1.05);
         }
@@ -112,7 +112,7 @@
             left: 25px;
             right: 25px;
             height: 3px;
-            background: linear-gradient(90deg, #a8c356, #8fb53f);
+            background: linear-gradient(90deg, #2d6a2f, #4a8c52);
             border-radius: 2px;
         }
 
@@ -131,7 +131,7 @@
         }
 
         .property-title a:hover {
-            color: #a8c356;
+            color: #4a8c52;
         }
 
         .property-home {
@@ -143,7 +143,7 @@
         }
 
         .property-home i {
-            color: #a8c356;
+            color: #4a8c52;
             margin-right: 8px;
         }
 
@@ -170,14 +170,14 @@
             padding: 15px;
             border-radius: 12px;
             margin: 15px 0;
-            border-left: 4px solid #a8c356;
+            border-left: 4px solid #4a8c52;
         }
 
         .shop-count {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(168, 195, 86, 0.1);
+            background: rgba(45, 106, 47, 0.1);
             padding: 12px 16px;
             border-radius: 10px;
             margin-top: 15px;
@@ -186,12 +186,12 @@
         .shop-count-number {
             font-size: 24px;
             font-weight: 800;
-            color: #a8c356;
+            color: #2d6a2f;
         }
 
         .shop-count-text {
             font-size: 13px;
-            color: #5a6b2e;
+            color: #2d6a2f;
             font-weight: 600;
         }
 
@@ -202,8 +202,8 @@
         .property-link {
             display: block;
             text-align: center;
-            background: linear-gradient(135deg, #bad164, #a8c356);
-            color: #2d3748 !important;
+            background: linear-gradient(135deg, #4a8c52, #2d6a2f);
+            color: #ffffff !important;
             padding: 12px 24px;
             border-radius: 25px;
             font-weight: 600;
@@ -212,6 +212,7 @@
             position: relative;
             overflow: hidden;
             border: 2px solid transparent;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .property-link::before {
@@ -231,10 +232,11 @@
 
         .property-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(186, 209, 100, 0.4);
-            color: #1a202c !important;
-            background: linear-gradient(135deg, #a8c356, #8fb53f);
-            border-color: #bad164;
+            box-shadow: 0 8px 25px rgba(45, 106, 47, 0.4);
+            color: #ffffff !important;
+            background: linear-gradient(135deg, #6bb26f, #4a8c52);
+            border-color: #6bb26f;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .section-title h2 {
@@ -253,7 +255,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(90deg, #a8c356, #8fb53f);
+            background: linear-gradient(90deg, #2d6a2f, #4a8c52);
             border-radius: 2px;
         }
 
@@ -395,7 +397,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <i class="fas fa-{{ $value->property_type == 'plaza' ? 'store' : 'map' }}" style="font-size: 24px; color: #a8c356; opacity: 0.3;"></i>
+                                        <i class="fas fa-{{ $value->property_type == 'plaza' ? 'store' : 'map' }}" style="font-size: 24px; color: #4a8c52; opacity: 0.3;"></i>
                                     </div>
                                 </div>
                             </div>

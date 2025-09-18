@@ -10,8 +10,8 @@
 
     .colorDefinition {
         background: #ffffff !important;;
-        color: #b5061b !important;
-        border-color: #b5061b;
+        color: #059669 !important;
+        border-color: #059669;
         font-size: 12px;
     }
 
@@ -19,7 +19,7 @@
         font-weight: 600;
         font-size: 14px;
         letter-spacing: 0.05em;
-        color: #2d3748 !important;
+        color: #047857 !important;
         text-transform: uppercase;
     }
     .table td, .table th {
@@ -50,7 +50,7 @@
 
 /* Enhanced Tab Styling */
 .nav-tabs {
-    border-bottom: 2px solid #bad164;
+    border-bottom: 2px solid #059669;
     margin-bottom: 1rem;
 }
 
@@ -65,7 +65,7 @@
     padding: 4px 8px;
     font-weight: 600;
     font-size: 10px;
-    color: #6c757d;
+    color: #000000 !important;
     background: #f8f9fa;
     margin-right: 3px;
     transition: all 0.3s ease;
@@ -74,19 +74,26 @@
 }
 
 .nav-tabs .nav-link:hover {
-    border-color: #bad164;
-    color: #a8c356;
+    border-color: #059669;
+    color: #047857 !important;
     background: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(186, 209, 100, 0.2);
+    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.2);
 }
 
 .nav-tabs .nav-link.active {
     color: #ffffff !important;
-    background: linear-gradient(135deg, #bad164, #a8c356) !important;
-    border-color: #bad164;
-    box-shadow: 0 8px 25px rgba(186, 209, 100, 0.3);
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    border-color: #059669 !important;
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3) !important;
     transform: translateY(-3px);
+    border: 1px solid #059669 !important;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    border-bottom: 3px solid #ffffff !important;
 }
 
 .nav-tabs .nav-link::before {
@@ -110,7 +117,7 @@
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(186, 209, 100, 0.2);
+    border: 1px solid rgba(5, 150, 105, 0.2);
 }
 
 .tab-pane {
@@ -125,7 +132,7 @@
     text-transform: uppercase;
     font-weight: 600;
     border-bottom: 3px solid transparent;
-    color: #001935;
+    color: #000000 !important;
 }
 
 @keyframes fadeInUp {
@@ -145,7 +152,7 @@
 }
 
 .table thead th {
-    background: linear-gradient(135deg, #bad164, #a8c356);
+    background: linear-gradient(135deg, #059669, #047857);
     color: white;
     font-weight: 600;
     border: none;
@@ -153,11 +160,11 @@
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: rgba(186, 209, 100, 0.05);
+    background-color: rgba(5, 150, 105, 0.05);
 }
 
 .table tbody tr:hover {
-    background-color: rgba(186, 209, 100, 0.1);
+    background-color: rgba(5, 150, 105, 0.1);
     transform: scale(1.01);
     transition: all 0.2s ease;
 }
@@ -169,26 +176,26 @@
 
 /* Print Button Enhancement */
 .btn-warning {
-    background: linear-gradient(135deg, #bad164, #a8c356) !important;
+    background: linear-gradient(135deg, #059669, #047857) !important;
     border: none !important;
     color: white !important;
     font-weight: 600;
     border-radius: 25px;
     padding: 10px 20px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(186, 209, 100, 0.3);
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
 }
 
 .btn-warning:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(186, 209, 100, 0.4);
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
     color: white !important;
 }
 
 /* Professional Countdown Timer Styling */
 .countdown-container {
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    border: 1px solid #bad164;
+    border: 1px solid #059669;
     border-radius: 8px;
     padding: 10px;
     margin: 8px 0;
@@ -210,7 +217,7 @@
     font-family: 'Courier New', monospace;
     font-size: 12px;
     font-weight: 700;
-    color: #a8c356;
+    color: #047857;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 1;
 }
@@ -221,7 +228,7 @@
     border-radius: 8px;
     padding: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(186, 209, 100, 0.2);
+    border: 1px solid rgba(5, 150, 105, 0.2);
     margin-bottom: 10px;
 }
 
@@ -241,14 +248,14 @@
 }
 
 .property-info-item i {
-    color: #a8c356;
+    color: #047857;
     margin-right: 10px;
     font-size: 14px;
     width: 20px;
 }
 
 .property-info-text {
-    color: #5a6b2e;
+    color: #047857;
     font-size: 11px;
     font-weight: 500;
 }
@@ -279,7 +286,7 @@
 /* Bid Input Styling */
 .bid-input-section {
     background: #ffffff;
-    border: 1px solid #bad164;
+    border: 1px solid #059669;
     border-radius: 8px;
     padding: 10px;
     margin-top: 10px;
@@ -295,12 +302,12 @@
 }
 
 .bid-input-section .form-control:focus {
-    border-color: #bad164;
-    box-shadow: 0 0 0 3px rgba(186, 209, 100, 0.1);
+    border-color: #059669;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
 }
 
 .place-bid-btn {
-    background: linear-gradient(135deg, #bad164, #a8c356) !important;
+    background: linear-gradient(135deg, #059669, #047857) !important;
     border: none !important;
     color: white !important;
     font-weight: 600;
@@ -312,11 +319,11 @@
 
 .place-bid-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(186, 209, 100, 0.4);
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
 }
 
 .word-display {
-    color: #a8c356 !important;
+    color: #047857 !important;
     font-size: 12px;
     font-style: italic;
     margin-top: 8px;
@@ -521,6 +528,7 @@ p {
 
 .word-display {
     font-size: 10px !important;
+    color: #047857 !important;
 }
 
 /* Minimal container spacing for ultra-compact design */

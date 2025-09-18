@@ -27,7 +27,7 @@
 
     body {
         font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -54,7 +54,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
+        background: linear-gradient(90deg, #27a844, #28a745, #20c997);
     }
 
     .logo-section {
@@ -72,7 +72,7 @@
     }
 
     .welcome-text {
-        color: #2d3748;
+        color: #1e7e34;
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 8px;
@@ -109,8 +109,8 @@
 
     .form-control:focus {
         outline: none;
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        border-color: #28a745;
+        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.15);
         transform: translateY(-2px);
     }
 
@@ -125,13 +125,13 @@
     }
 
     .form-control:focus + .form-icon {
-        color: #667eea;
+        color: #28a745;
     }
 
     .btn-login {
         width: 100%;
         padding: 15px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
         border: none;
         border-radius: 12px;
         color: white;
@@ -145,7 +145,7 @@
 
     .btn-login:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
     }
 
     .btn-login:active {
@@ -158,7 +158,7 @@
     }
 
     .forgot-password a {
-        color: #667eea;
+        color: #28a745;
         text-decoration: none;
         font-size: 14px;
         font-weight: 500;
@@ -166,7 +166,7 @@
     }
 
     .forgot-password a:hover {
-        color: #764ba2;
+        color: #1e7e34;
         text-decoration: underline;
     }
 
@@ -216,7 +216,7 @@
     }
 
     .register-link a {
-        color: #667eea;
+        color: #28a745;
         text-decoration: none;
         font-weight: 600;
     }

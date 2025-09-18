@@ -2,30 +2,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="auctions-hero py-5">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold text-white mb-3">Upcoming Auctions</h1>
-                    <p class="lead text-white-50 mb-4">Discover exciting property opportunities in our upcoming auction events</p>
-                    <div class="hero-stats d-flex justify-content-center gap-4 flex-wrap">
-                        <div class="stat-item">
-                            <h3 class="text-warning mb-0">{{count($auctions)}}</h3>
-                            <p class="text-white-50 mb-0">Active Auctions</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="text-success mb-0">500+</h3>
-                            <p class="text-white-50 mb-0">Properties Sold</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="text-info mb-0">1000+</h3>
-                            <p class="text-white-50 mb-0">Happy Buyers</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     @include('frontend._partial.filters')
 

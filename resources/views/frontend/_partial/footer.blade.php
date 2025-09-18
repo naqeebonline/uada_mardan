@@ -63,8 +63,9 @@
     <!-- Footer Styles -->
     <style>
         .modern-footer {
-            background: linear-gradient(135deg, #a8c356 0%, #8fb53f 50%, #7a9e35 100%);
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
             position: relative;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15), 0 -2px 10px rgba(45, 106, 47, 0.3);
         }
         
         .modern-footer::before {
@@ -74,7 +75,8 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, transparent, #bad164, transparent);
+            background: linear-gradient(90deg, #8fd19e, #66bb6a, #4caf50);
+            opacity: 1;
         }
         
         .footer-logo {
@@ -92,12 +94,14 @@
             color: #ffffff !important;
             font-size: 14px;
             opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .footer-section h6 {
             font-size: 16px;
             font-weight: 600;
             color: #ffffff !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .footer-links {
@@ -119,12 +123,14 @@
             font-size: 13px;
             padding: 2px 0;
             opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .footer-links a:hover {
-            color: #bad164;
+            color: #e8f5e8;
             transform: translateX(3px);
             opacity: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         .footer-links a i {
@@ -149,12 +155,14 @@
             font-size: 13px;
             transition: all 0.3s ease;
             opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .back-to-top:hover {
-            color: #bad164 !important;
+            color: #e8f5e8 !important;
             transform: translateY(-2px);
             opacity: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         .footer-bottom {
@@ -165,11 +173,11 @@
         .contact-item i {
             font-size: 14px;
             flex-shrink: 0;
-            color: #bad164 !important;
+            color: #e8f5e8 !important;
         }
 
         .text-primary {
-            color: #bad164 !important;
+            color: #e8f5e8 !important;
         }
         
         @media (max-width: 768px) {
