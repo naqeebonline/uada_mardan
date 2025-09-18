@@ -14,6 +14,7 @@ class AdminDashboardController extends Controller
 {
     public function getDashboardData()
     {
+        
 
         $data["title"] = "User Registration";
         $data["total_tma_properties"] = $this->getTotalTmaProperties();
