@@ -14,9 +14,8 @@ class AdminDashboardController extends Controller
 {
     public function getDashboardData()
     {
-        
 
-        $data["title"] = "User Registration";
+        $data["title"] = "User Registrations";
         $data["total_tma_properties"] = $this->getTotalTmaProperties();
         $data["total_plaza"] = $this->totalNumberOfPlaza();
         $data["total_plots"] = $this->totalNumberOfPlots();
