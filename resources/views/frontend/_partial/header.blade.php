@@ -427,16 +427,24 @@
         }
 
         @media (max-width: 576px) {
-            .brand-text {
-                font-size: 14px;
-            }
-
-            .logo-image {
-                height: 40px;
-            }
-
             .navbar-brand {
-                gap: 8px;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 4px;
+                margin-right: 0;
+                width: 100%;
+                text-align: center;
+            }
+            .logo-image {
+                height: 36px;
+                max-width: 80vw;
+                margin-bottom: 2px;
+            }
+            .brand-text {
+                font-size: 12px;
+                line-height: 1.1;
+                word-break: break-word;
+                max-width: 90vw;
             }
         }
 
