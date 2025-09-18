@@ -278,7 +278,7 @@
                 <!-- Modal Header with Logo -->
                 <div class="modal-header bg-gradient-primary text-white">
                     <div class="d-flex align-items-center w-100">
-                        <img src="{{asset('logo.jpg')}}" 
+                        <img src="{{asset('logo.png')}}" 
                              alt="Organization Logo" 
                              class="me-3" 
                              style="height: 40px;">

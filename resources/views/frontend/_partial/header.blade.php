@@ -12,7 +12,7 @@
 
     <!-- Favicon -->
 
-    <link rel="shortcut icon" href="{{asset('logo.jpg')}}" />
+    <link rel="shortcut icon" href="{{asset('logo.png')}}" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -146,7 +146,7 @@
 
         .brand-text {
             font-family: 'Poppins', sans-serif;
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 700;
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
@@ -473,8 +473,9 @@ Enhanced Modern Header -->
             <div class="container-fluid px-3 px-lg-4">
                 <a class="navbar-brand" href="{{url("/")}}">
                     <div class="loading-bar"></div>
-                    <img src="{{asset('logo.jpg')}}" alt="Mardan Development Authority Logo" class="logo-image">
-                    <span class="brand-text">Mardan Development Authority</span>
+                    <img src="{{asset('logo.png')}}" alt="URBAN AREA DEVELOPMENT AUTHORITY MARDAN Logo" class="logo-image">
+                    <span class="brand-text">URBAN AREA DEVELOPMENT AUTHORITY MARDAN</span>
+                    
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

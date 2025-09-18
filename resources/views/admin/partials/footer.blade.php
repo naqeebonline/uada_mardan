@@ -4,12 +4,12 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <strong class="text-muted">
-                    Copyright &copy; {{date("Y")}} Sheikh Maltoon Town. All Rights Reserved.
+                    Copyright &copy; {{date("Y")}} UADA Mardan  All Rights Reserved.
                 </strong>
             </div>
             <div class="col-md-6 text-md-end">
                 <small class="text-muted">
-                    <i class="fas fa-code me-1"></i>Developed with ❤️ by Sheikh Maltoon Town
+                    <i class="fas fa-code me-1"></i>Developed with ❤️ by UADA
                 </small>
             </div>
         </div>

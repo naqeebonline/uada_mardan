@@ -26,7 +26,7 @@ $shop_name = $customer->shop->shop_name ?? "";
                 <h6 style="font-family: sans-serif;    margin: 0px;    float: right;    width: 100%;    font-size: 11px;    margin-top: 10px;">GT Road Peshawar</h6>
             </div>
 
-            <img src="https://properties-cdgp.com/images/logo.jpg" style="margin-right: 10px;    height: 45px;    width: 60px;    float: right;"/>
+            <img src="https://properties-cdgp.com/images/logo.png" style="margin-right: 10px;    height: 45px;    width: 60px;    float: right;"/>
 
             <ul style='padding: 5px 0px;    margin: 0px;    float: left;    width: inherit;    list-style: none;'>
                 <li style='float: left;    font-size: 12px;    width: 150px;font-family: sans-serif;  padding-left: 10px;  '>B.No:  <span style="font-weight: bold;">6</span> </li>
@@ -105,7 +105,7 @@ $shop_name = $customer->shop->shop_name ?? "";
                 <h6 style="font-family: sans-serif;    margin: 0px;    float: right;    width: 100%;    font-size: 11px;    margin-top: 1px;">GT Road Peshawar</h6>
             </div>
 
-            <img src="https://properties-cdgp.com/images/logo.jpg" style="margin-right: 10px;    height: 45px;    width: 60px;    float: right;"/>
+            <img src="https://properties-cdgp.com/images/logo.png" style="margin-right: 10px;    height: 45px;    width: 60px;    float: right;"/>
 
             <ul style='padding: 5px 0px;    margin: 0px;    float: left;    width: inherit;    list-style: none;'>
                 <li style='float: left;    font-size: 12px;    width: 150px;font-family: sans-serif;  padding-left: 4px;  '>B.No:  <span style="font-weight: bold;">6</span> </li>
@@ -184,7 +184,7 @@ $shop_name = $customer->shop->shop_name ?? "";
                 <h6 style="font-family: sans-serif;    margin: 0px;    float: right;    width: 100%;    font-size: 11px;    margin-top: 1px;">GT Road Peshawar</h6>
             </div>
 
-            <img src="https://properties-cdgp.com/images/logo.jpg" style="margin-right: 10px;    height: 45px;    width: 60px;    float: right;"/>
+            <img src="https://properties-cdgp.com/images/logo.png" style="margin-right: 10px;    height: 45px;    width: 60px;    float: right;"/>
 
             <ul style='padding: 5px 0px;    margin: 0px;    float: left;    width: inherit;    list-style: none;'>
                 <li style='float: left;    font-size: 12px;    width: 150px;font-family: sans-serif;  padding-left: 4px;  '>B.No:  <span style="font-weight: bold;">6</span> </li>
@@ -261,7 +261,7 @@ $shop_name = $customer->shop->shop_name ?? "";
                 <h6 style="font-family: sans-serif;    margin: 0px;    float: right;    width: 100%;    font-size: 11px;    margin-top: 1px;">GT Road Peshawar</h6>
             </div>
 
-            <img src="https://properties-cdgp.com/images/logo.jpg" style="margin-right: 10px;    height: 45px;    width: 60px;    float: right;"/>
+            <img src="https://properties-cdgp.com/images/logo.png" style="margin-right: 10px;    height: 45px;    width: 60px;    float: right;"/>
 
             <ul style='padding: 5px 0px;    margin: 0px;    float: left;    width: inherit;    list-style: none;'>
                 <li style='float: left;    font-size: 12px;    width: 150px;font-family: sans-serif;  padding-left: 4px;  '>B.No:  <span style="font-weight: bold;">6</span> </li>

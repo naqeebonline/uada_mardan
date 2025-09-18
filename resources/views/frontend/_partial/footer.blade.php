@@ -5,8 +5,8 @@
             <!-- Company Info -->
             <div class="col-lg-4 col-md-6">
                 <div class="footer-section">
-                    <img src="{{asset('logo.jpg')}}" alt="Logo" class="footer-logo mb-2" height="35">
-                    <p class="text-light-gray mb-0">Sheikh Maltoon Town Property Auction Platform - Your trusted partner in property auctions.</p>
+                    <img src="{{asset('logo.png')}}" alt="Logo" class="footer-logo mb-2" height="35">
+                    <p class="text-light-gray mb-0">UADA Mardan Property Auction Platform - Your trusted partner in property auctions.</p>
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
                     <div class="contact-info">
                         <div class="contact-item mb-2">
                             <i class="fas fa-map-marker-alt me-2"></i>
-                            <span class="text-light-gray">Sector-F Sheikh Maltoon Town Mardan Pakistan</span>
+                            <span class="text-light-gray">Sector-F UADA Mardan Pakistan</span>
                         </div>
                         <div class="contact-item mb-0">
                             <i class="fas fa-phone me-2"></i>
@@ -48,7 +48,7 @@
             <div class="row align-items-center py-2">
                 <div class="col-md-8 text-center text-md-start">
                     <p class="mb-0 text-light-gray small">
-                        &copy; <span id="copyright"></span> Sheikh Maltoon Town. All Rights Reserved.
+                        &copy; <span id="copyright"></span> UADA Mardan  All Rights Reserved.
                     </p>
                 </div>
                 <div class="col-md-4 text-center text-md-end">

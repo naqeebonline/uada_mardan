@@ -4,11 +4,11 @@
         <div class="container-fluid">
             <!-- Logo -->
             <a href="http://eproperty.lcbkp.gov.pk/" class="navbar-brand d-flex align-items-center">
-                <img src="{{asset('logo.jpg')}}" 
+                <img src="{{asset('logo.png')}}" 
                      style="width:180px; height:45px;" 
                      alt="eProperty" 
                      class="me-2">
-                <span class="d-none d-md-inline fs-6">Sheikh Maltoon Town</span>
+                <span class="d-none d-md-inline fs-6">UADA</span>
             </a>
 
             <!-- Mobile Toggle Button -->

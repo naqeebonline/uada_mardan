@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('logo.jpg')}}" type="image/jpg">
+    <link rel="shortcut icon" href="{{asset('logo.png')}}" type="image/jpg">
 </head>
 <style>
     * {
@@ -275,9 +275,9 @@
 <body>
     <div class="login-container">
         <div class="logo-section">
-            <img src="{{asset('logo.jpg')}}" alt="Company Logo">
+            <img src="{{asset('logo.png')}}" alt="Company Logo">
             <h1 class="welcome-text">Welcome Back</h1>
-            <p class="subtitle">Mardan Development Authority</p>
+            <p class="subtitle">URBAN AREA DEVELOPMENT AUTHORITY MARDAN</p>
         </div>
 
         <form method="POST" action="{{ route('login') }}" id="loginForm">
