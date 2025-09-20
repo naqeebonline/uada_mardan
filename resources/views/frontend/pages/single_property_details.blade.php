@@ -243,8 +243,11 @@
 .property-info-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 6px;
     padding: 3px 0;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
 .property-info-item i {
@@ -374,6 +377,24 @@
     
     .property-info-card {
         padding: 10px;
+        text-align: center;
+    }
+    
+    .property-info-item {
+        justify-content: center !important;
+        text-align: center !important;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .property-info-item i {
+        margin-right: 5px;
+        margin-bottom: 2px;
+    }
+    
+    .property-info-text {
+        font-size: 10px;
+        text-align: center;
     }
     
     .bid-input-section {
@@ -397,10 +418,6 @@
         padding: 6px;
     }
     
-    .property-info-text {
-        font-size: 10px;
-    }
-    
     .max-bid-text {
         font-size: 9px;
     }
@@ -409,6 +426,7 @@
 @media (max-width: 576px) {
     .property-title {
         font-size: 12px;
+        text-align: center;
     }
     
     .countdown-timer {
@@ -419,16 +437,37 @@
         font-size: 12px;
     }
     
+    .property-info-card {
+        padding: 8px;
+        text-align: center;
+    }
+    
+    .property-info-item {
+        justify-content: center !important;
+        text-align: center !important;
+        flex-direction: column;
+        gap: 3px;
+        align-items: center;
+    }
+    
+    .property-info-item i {
+        margin-right: 3px;
+        margin-bottom: 2px;
+    }
+    
+    .property-info-text {
+        font-size: 9px;
+        text-align: center !important;
+        display: block;
+        width: 100%;
+    }
+    
     .nav-tabs .nav-link {
         padding: 2px 4px;
         font-size: 8px;
     }
     
     .tab-content {
-        padding: 8px;
-    }
-    
-    .property-info-card {
         padding: 8px;
     }
     
@@ -442,10 +481,6 @@
     
     .table td, .table th {
         padding: 4px;
-    }
-    
-    .property-info-text {
-        font-size: 9px;
     }
     
     .max-bid-text {
@@ -570,29 +605,7 @@ body {
 }
 
 </style>
-<div class="bg-light py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <ol class="breadcrumb mb-0 flex-wrap" style="font-size: 10px;">
-                    <li class="breadcrumb-item">
-                        <a href="{{url('/')}}" class="text-decoration-none"> 
-                            <i class="fas fa-home" style="font-size: 10px;"></i> Home
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <i class="fas fa-chevron-right mx-2" style="font-size: 8px;"></i> 
-                        <a href="#" class="text-decoration-none">Property Details</a>
-                    </li>
-                    <li class="breadcrumb-item active">
-                        <i class="fas fa-chevron-right mx-2" style="font-size: 8px;"></i> 
-                        <span class="text-truncate" style="max-width: 200px;" title="{{$value->shop_name}}">{{$value->shop_name}}</span>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
+ 
 
 
 <div class="wrapper">
@@ -606,14 +619,15 @@ body {
                         <div class="property-info-card">
                             <h3 class="property-title">{{$value->shop_name}}</h3>
                             
-                            <div class="property-info-item">
+                            <div class="property-info-item" style="text-align: center;">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span class="property-info-text">{{$value->location}}</span>
+                                                            &nbsp;&nbsp; &nbsp;&nbsp;    <i class="fas fa-tag"></i> 
+                                <span class="property-info-text"><strong>Starting Bid:</strong> {{$value->starting_bid_amount}}</span>
                             </div>
                             
                             <div class="property-info-item">
-                                <i class="fas fa-tag"></i>
-                                <span class="property-info-text"><strong>Starting Bid:</strong> {{$value->starting_bid_amount}}</span>
+
                             </div>
                             
                             <div class="countdown-container">

@@ -182,34 +182,65 @@
         
         @media (max-width: 768px) {
             .footer-section {
-                text-align: center;
+                text-align: center !important;
                 margin-bottom: 1rem;
             }
             
             .footer-links {
-                justify-content: center;
+                justify-content: center !important;
                 gap: 10px;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                margin: 0 auto !important;
+                width: 100% !important;
+            }
+            
+            .footer-links li {
+                display: flex !important;
+                justify-content: center !important;
+                margin: 0 !important;
+            }
+            
+            .footer-links a {
+                justify-content: center !important;
+                text-align: center !important;
             }
             
             .contact-item {
-                justify-content: center;
-                text-align: center;
+                justify-content: center !important;
+                text-align: center !important;
                 font-size: 12px;
             }
             
             .text-light-gray {
                 font-size: 13px;
+                text-align: center !important;
             }
             
             .footer-section h6 {
                 font-size: 15px;
+                text-align: center !important;
             }
         }
         
         @media (max-width: 576px) {
             .footer-links {
-                flex-direction: column;
-                gap: 5px;
+                flex-direction: column !important;
+                gap: 8px !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .footer-links li {
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+            
+            .footer-links a {
+                justify-content: center !important;
+                text-align: center !important;
+                width: auto !important;
             }
         }
     </style>

@@ -3,411 +3,1106 @@
 @section('content')
 
     <?php $type = isset($_GET['type']) ? "?type=rent_out" : ""; ?>
-<style>
-    .colorDefinition {
-        background: #ffffff !important;;
-        color: #b5061b !important;
-        border-color: #b5061b;
-        font-size: 12px;
-    }
-
-    .colorDefinition1 {
-        font-weight: bold;
-        font-size: 21px;
-        letter-spacing: 0.20em;
-        color: #b5061b !important;
-    }
-
-    .table td, .table th {
-        padding: .75rem;
-        vertical-align: top;
-        border-top: 0px solid #dee2e6;
-    }
-
-    .modal-body {
-        position: relative;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-        padding: 0.50rem;
-    }
-    
-    .blink_me {
-        animation: blinker 1s linear infinite;
-    }
-
-    @keyframes blinker {
-        50% {
-            opacity: 0;
+    <style>
+        /* Theme Variables */
+        :root {
+            --primary-color: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            --accent-color: linear-gradient(135deg, #4a8c52 0%, #6bb26f 25%, #8fd19e 50%, #6bb26f 75%, #4a8c52 100%);
         }
-    }
 
-    /* Professional Green Theme Property Cards */
-    .property-item.property-col-list {
-        background: linear-gradient(135deg, #f8fcf9 0%, #e8f5e8 100%) !important;
-        border: 1px solid #27a844 !important;
-        border-radius: 8px !important;
-        box-shadow: 0 4px 15px rgba(39, 168, 68, 0.12), 0 2px 6px rgba(39, 168, 68, 0.08) !important;
-        transition: all 0.3s ease !important;
-        overflow: hidden !important;
-        position: relative !important;
-        margin-bottom: 12px !important;
-    }
+        /* Base styles */
+        body {
+            background: #f8f9fa;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    .property-item.property-col-list:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 6px 20px rgba(39, 168, 68, 0.15), 0 3px 8px rgba(39, 168, 68, 0.12) !important;
-        border-color: #1e7e34 !important;
-    }
+        .colorDefinition {
+            background: #ffffff !important;
+            color: var(--primary-color) !important;
+            border-color: var(--primary-color);
+            font-size: 12px;
+        }
 
-    .property-item.property-col-list::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #27a844, #28a745, #20c997);
-        z-index: 1;
-    }
+        .colorDefinition1 {
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            color: var(--primary-color) !important;
+            text-transform: uppercase;
+        }
 
-    .property-details {
-        background: rgba(255, 255, 255, 0.8) !important;
-        padding: 10px 15px !important;
-        border-radius: 0 6px 6px 0 !important;
-    }
+        .table td, .table th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 0px solid #dee2e6;
+        }
 
-    .property-title a {
-        color: #1e7e34 !important;
-        font-weight: 600 !important;
-        text-decoration: none !important;
-        transition: color 0.3s ease !important;
-        font-size: 16px !important;
-        line-height: 1.2 !important;
-    }
+        .modal-body {
+            position: relative;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 0.50rem;
+        }
 
-    .property-title a:hover {
-        color: #155724 !important;
-    }
+        .blink_me {
+            animation: blinker 1s linear infinite;
+        }
 
-    .property-title {
-        margin-bottom: 8px !important;
-    }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
 
-    .property-price.blink_me {
-        background: linear-gradient(135deg, #28a745, #20c997) !important;
-        color: white !important;
-        padding: 4px 10px !important;
-        border-radius: 15px !important;
-        display: inline-block !important;
-        font-weight: bold !important;
-        font-size: 14px !important;
-        box-shadow: 0 2px 6px rgba(40, 167, 69, 0.3) !important;
-        margin: 5px 0 !important;
-        line-height: 1.2 !important;
-    }
+        /* Modern Page Styling */
+        .modern-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 1200px;
+        }
 
-    .property-m-sqft, .property-address {
-        color: #495057 !important;
-        margin: 2px 0 !important;
-        font-size: 13px !important;
-        line-height: 1.3 !important;
-    }
+        .plaza-header {
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            border-radius: 6px;
+            padding: 8px 15px;
+            color: white;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(45, 106, 47, 0.3), 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    .property-m-sqft i, .property-address i {
-        color: #28a745 !important;
-        margin-right: 8px !important;
-    }
+        .plaza-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #8fd19e, #66bb6a, #4caf50);
+            border-radius: 6px 6px 0 0;
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
 
-    .label {
-        padding: 3px 8px !important;
-        border-radius: 12px !important;
-        font-size: 11px !important;
-        font-weight: 500 !important;
-        margin: 1px !important;
-        display: inline-block !important;
-        text-decoration: none !important;
-        transition: all 0.3s ease !important;
-        line-height: 1.2 !important;
-    }
+        /* Ensure sticky works across all browsers */
+        .plaza-header {
+            position: -webkit-sticky; /* Safari */
+            position: sticky; /* Standard */
+        }
 
-    .label-success {
-        background: #28a745 !important;
-        color: white !important;
-    }
+        /* Mobile sticky fix - ensure mobile menu appears above plaza-header */
+        @media (max-width: 768px) {
+            .plaza-header {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                z-index: 5 !important;
+            }
+        }
 
-    .label-success:hover {
-        background: #218838 !important;
-        transform: scale(1.05) !important;
-    }
+        .plaza-header.scrolled {
+            padding: 6px 15px;
+            box-shadow: 0 4px 12px rgba(45, 106, 47, 0.4), 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #1e4a20 0%, #2d6a2f 25%, #4a8c52 50%, #2d6a2f 75%, #1e4a20 100%);
+            border-radius: 0 0 6px 6px;
+            margin-bottom: 0;
+        }
 
-    .label-primary {
-        background: #007bff !important;
-        color: white !important;
-    }
+        .plaza-header.scrolled::before {
+            height: 2px;
+            background: linear-gradient(90deg, #66bb6a, #4caf50, #8fd19e);
+        }
 
-    .label-primary:hover {
-        background: #0069d9 !important;
-        transform: scale(1.05) !important;
-    }
+        .plaza-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
 
-    .label-warning {
-        background: #ffc107 !important;
-        color: #212529 !important;
-    }
+        .plaza-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.2;
+            color: #ffffff !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
 
-    .label-warning:hover {
-        background: #e0a800 !important;
-        transform: scale(1.05) !important;
-    }
+        .plaza-subtitle {
+            font-size: 11px;
+            opacity: 0.9;
+            margin: 2px 0 0 0;
+            color: #ffffff !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
 
-    .submit_bid_amount {
-        background: rgba(255, 255, 255, 0.9) !important;
-        border-radius: 6px !important;
-        padding: 8px !important;
-        box-shadow: 0 1px 4px rgba(39, 168, 68, 0.1) !important;
-    }
+        .plaza-center {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
 
-    .submit_bid_amount input.form-control {
-        border: 1px solid #28a745 !important;
-        border-radius: 6px !important;
-        padding: 8px 10px !important;
-        transition: border-color 0.3s ease !important;
-        font-size: 14px !important;
-    }
+        .countdown-container {
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+            border-radius: 4px;
+            padding: 4px 12px;
+            text-align: center;
+            border: 1px solid #6bb26f;
+            box-shadow: 0 2px 6px rgba(45, 106, 47, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            min-width: 110px;
+        }
 
-    .submit_bid_amount input.form-control:focus {
-        border-color: #20c997 !important;
-        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
-    }
+        .countdown-label {
+            font-size: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 2px;
+            opacity: 1;
+            color: #2d6a2f !important;
+            text-shadow: none;
+        }
 
-    .btn.place_bid {
-        background: linear-gradient(135deg, #ffc107, #ffca28) !important;
-        border: none !important;
-        border-radius: 6px !important;
-        font-weight: 600 !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 2px 6px rgba(255, 193, 7, 0.3) !important;
-        font-size: 13px !important;
-        padding: 8px 12px !important;
-    }
+        .countdown-timer {
+            font-size: 25px;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            color: #1e4a20 !important;
+            line-height: 1.1;
+            text-shadow: none;
+        }
 
-    .btn.place_bid:hover {
-        background: linear-gradient(135deg, #e0a800, #ffb300) !important;
-        transform: translateY(-1px) !important;
-        box-shadow: 0 3px 8px rgba(255, 193, 7, 0.4) !important;
-    }
+        .plaza-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: flex-end;
+        }
 
-    .property-image {
-        border-radius: 6px 0 0 6px !important;
-        overflow: hidden !important;
-        height: 120px !important;
-    }
+        .header-bid-input {
+            width: 120px;
+            padding: 4px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 12px;
+        }
 
-    .property-image img {
-        height: 120px !important;
-        object-fit: cover !important;
-    }
+        .header-bid-input:focus {
+            outline: none;
+            border-color: white;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
 
-    .badge-primary {
-        background: #28a745 !important;
-        color: white !important;
-        border-radius: 10px !important;
-        padding: 3px 8px !important;
-        font-weight: 500 !important;
-        font-size: 10px !important;
-    }
+        .header-bid-btn {
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-    #word {
-        color: #28a745 !important;
-        font-size: 11px !important;
-        font-weight: 500 !important;
-        margin-top: 3px !important;
-        line-height: 1.2 !important;
-    }
+        .header-bid-btn:hover {
+            background: linear-gradient(135deg, #4a8c52 0%, #6bb26f 25%, #8fd19e 50%, #6bb26f 75%, #4a8c52 100%);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
 
-    .property-details-inner {
-        padding: 0 !important;
-    }
+        /* Property Table Styling */
+        .property-table {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: none;
+        }
 
-    .property-details-inner-box {
-        margin-bottom: 0 !important;
-    }
+        .property-item.property-col-list {
+            background: transparent;
+            border: none;
+            margin-bottom: 0;
+            display: table-row;
+            transition: all 0.3s ease;
+        }
 
-    .table.submit_bid_amount {
-        margin-bottom: 0 !important;
-    }
+        .property-item.property-col-list:hover {
+            background: rgba(168, 195, 86, 0.05);
+        }
 
-    /* Single line property info layout */
-    .property-info-single-line {
-        display: flex !important;
-        align-items: center !important;
-        flex-wrap: wrap !important;
-        gap: 8px !important;
-        margin: 8px 0 !important;
-    }
+        .property-row {
+            display: table-row;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
 
-    .info-item {
-        color: #495057 !important;
-        font-size: 12px !important;
-        line-height: 1.2 !important;
-        white-space: nowrap !important;
-    }
+        .property-row:last-child {
+            border-bottom: none;
+        }
 
-    .info-item i {
-        color: #28a745 !important;
-        margin-right: 4px !important;
-        font-size: 10px !important;
-    }
+        .property-row:hover {
+            background: rgba(168, 195, 86, 0.05);
+        }
 
-    .info-separator {
-        color: #28a745 !important;
-        font-weight: bold !important;
-        margin: 0 2px !important;
-        font-size: 12px !important;
-    }
+        .property-cell {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
 
-    .property-info-single-line .label {
-        margin-left: 4px !important;
-    }
-</style>
-<!--=================================
-breadcrumb -->
-<div class="bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="index-2.html"> <i class="fas fa-homes"></i> </a></li>
-                    {{--<li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="#">Library</a></li>
-                    <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Property List </span></li>--}}
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-<!--=================================
-breadcrumb -->
+        .property-cell:last-child {
+            border-right: none;
+        }
 
-<!--=================================
-Listing – grid view -->
-<section class="space-ptb" style="padding: 14px 0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="section-title mb-3 mb-lg-4">
-                    {{--<h2><span class="text-primary"></span> Results</h2>--}}
+        /* Compact Property Image */
+        .property-image-cell {
+            width: 120px;
+            padding: 10px !important;
+        }
+
+        .property-image-compact {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+            width: 100px;
+        }
+
+        .property-image-compact img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .property-image-compact:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Mobile image size adjustments */
+        @media (max-width: 768px) {
+            .img-fluid {
+                max-width: 40% !important;
+                height: auto !important;
+            }
+            
+            .modern-property-image img {
+                max-width: 40% !important;
+                height: auto !important;
+                margin: 0 auto !important;
+                display: block !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .img-fluid {
+                max-width: 40% !important;
+                height: auto !important;
+            }
+            
+            .modern-property-image img {
+                max-width: 40% !important;
+                height: auto !important;
+                margin: 0 auto !important;
+                display: block !important;
+            }
+        }
+
+        .property-lable {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 2;
+        }
+
+        .property-lable .badge {
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(45, 106, 47, 0.4);
+        }
+
+        /* Property Details Cell */
+        .property-details-cell {
+            min-width: 300px;
+        }
+
+        .property-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .property-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .property-title a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .property-title a:hover {
+            color: #4a8c52;
+        }
+
+        .property-price {
+            font-size: 14px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .property-info-compact {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .property-info-item {
+            display: flex;
+            align-items: center;
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .property-info-item i {
+            width: 14px;
+            margin-right: 6px;
+            color: #4a8c52;
+            font-size: 10px;
+        }
+
+        .property-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .property-badges .label {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .property-badges .label-success {
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            opacity: 0.9;
+        }
+
+        .property-badges .label-primary {
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            opacity: 0.8;
+        }
+
+        .property-badges .label-warning {
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            opacity: 0.7;
+        }
+
+        .property-badges .label:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(168, 195, 86, 0.3);
+        }
+
+        /* Responsive Bid Section */
+        .bid-cell {
+            min-width: 280px;
+            padding: 10px !important;
+        }
+
+        .bid-section-compact {
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            border-radius: 8px;
+            padding: 15px;
+            color: white;
+        }
+
+        .bid-input-container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .bid-input-group {
+            display: flex;
+            gap: 8px;
+            align-items: stretch;
+            margin-bottom: 8px;
+        }
+
+        .bid-input-group .form-control {
+            flex: 1;
+            min-width: 120px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .bid-input-group .form-control:focus {
+            border-color: white;
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .bid-input-group .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            color: white;
+            transition: all 0.3s ease;
+            min-width: 80px;
+        }
+
+        .bid-input-group .btn:hover {
+            background: linear-gradient(135deg, #4a8c52 0%, #6bb26f 25%, #8fd19e 50%, #6bb26f 75%, #4a8c52 100%);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(45, 106, 47, 0.2);
+        }
+
+        .words-display {
+            font-size: 10px;
+            font-weight: bold;
+            color: rgba(28, 26, 26, 0.9);
+            font-style: italic;
+            min-height: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* Modern Bid Input Group Styles */
+        .modern-bid-input-group {
+            margin-bottom: 8px;
+        }
+
+        .bid-amount-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 12px;
+            z-index: 2;
+            color: #4a8c52;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .modern-bid-input {
+            width: 100%;
+            padding: 12px 12px 12px 35px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            background: #fff;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .modern-bid-input:focus {
+            border-color: #4a8c52;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(45, 106, 47, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .modern-bid-input::placeholder {
+            color: #adb5bd;
+            font-weight: 400;
+        }
+
+        .modern-place-bid-btn {
+            background: linear-gradient(135deg, #2d6a2f 0%, #4a8c52 25%, #6bb26f 50%, #4a8c52 75%, #2d6a2f 100%);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(45, 106, 47, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .modern-place-bid-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(45, 106, 47, 0.4);
+            background: linear-gradient(135deg, #4a8c52 0%, #6bb26f 25%, #8fd19e 50%, #6bb26f 75%, #4a8c52 100%);
+        }
+
+        .modern-place-bid-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(45, 106, 47, 0.3);
+        }
+
+        .modern-place-bid-btn i {
+            font-size: 14px;
+        }
+
+        .modern-place-bid-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .modern-place-bid-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Mobile Responsive Table */
+        @media (max-width: 992px) {
+            .modern-container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .plaza-title {
+                font-size: 16px;
+            }
+
+            .countdown-container {
+                padding: 3px 10px;
+                min-width: 95px;
+            }
+
+            .countdown-label {
+                font-size: 7px;
+            }
+
+            .countdown-timer {
+                font-size: 10px;
+            }
+
+            .property-cell {
+                padding: 12px 10px;
+            }
+
+            .property-image-compact {
+                height: 70px;
+                width: 90px;
+            }
+
+            .property-image-compact img {
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .modern-container {
+                margin: 5px;
+                padding: 10px;
+            }
+
+            .plaza-header {
+                padding: 8px 10px;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .plaza-header.scrolled {
+                padding: 6px 10px;
+            }
+
+            .plaza-left, .plaza-center, .plaza-right {
+                flex: none;
+            }
+
+            .plaza-left {
+                order: 1;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 8px;
+            }
+
+            .plaza-center {
+                order: 2;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 8px;
+            }
+
+            .plaza-right {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 0;
+            }
+
+            /* Ensure scrolled header content stays centered in mobile */
+            .plaza-header.scrolled .plaza-left {
+                text-align: center !important;
+            }
+
+            .plaza-header.scrolled .plaza-center {
+                justify-content: center !important;
+            }
+
+            .plaza-header.scrolled .plaza-right {
+                justify-content: center !important;
+            }
+
+            .plaza-title {
+                font-size: 14px;
+                text-align: center !important;
+            }
+
+            .plaza-subtitle {
+                font-size: 10px;
+                text-align: center !important;
+            }
+
+            .countdown-container {
+                padding: 3px 10px;
+                min-width: 90px;
+                margin: 0 auto;
+            }
+
+            .countdown-label {
+                font-size: 7px;
+            }
+
+            .countdown-timer {
+                font-size: 9px;
+            }
+
+            .header-bid-input {
+                width: 100px;
+                font-size: 11px;
+            }
+
+            .header-bid-btn {
+                font-size: 11px;
+                padding: 4px 10px;
+            }
+
+            /* Stack table cells vertically on mobile */
+            .property-table,
+            .property-row,
+            .property-cell {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .property-cell {
+                border-bottom: none !important;
+                border-right: none !important;
+                padding: 8px !important;
+                text-align: center !important;
+            }
+
+            .property-image-cell {
+                width: 100% !important;
+                text-align: center;
+                padding: 10px !important;
+            }
+
+            .property-image-compact {
+                height: 100px;
+                width: 120px;
+                margin: 0 auto;
+            }
+
+            .property-image-compact img {
+                height: 100px;
+            }
+
+            .bid-cell {
+                min-width: 100% !important;
+            }
+
+            .bid-input-group {
+                flex-direction: column !important;
+                gap: 8px !important;
+            }
+
+            .bid-input-group .form-control {
+                min-width: 100% !important;
+            }
+
+            .bid-input-group .btn {
+                min-width: 100% !important;
+            }
+
+            /* Property Details Mobile Centering */
+            .property-details-cell,
+            .modern-property-details {
+                text-align: center !important;
+            }
+
+            .property-title {
+                text-align: center !important;
+            }
+
+            .property-price {
+                text-align: center !important;
+            }
+
+            .property-info-grid {
+                text-align: center !important;
+            }
+
+            .property-info-item {
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            .property-badges {
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            /* Modern Bid Input Mobile Styles */
+            .bid-amount-container {
+                padding: 12px !important;
+            }
+
+            .modern-bid-input {
+                font-size: 14px !important;
+                padding: 10px 10px 10px 30px !important;
+            }
+
+            .currency-symbol {
+                font-size: 14px !important;
+                left: 10px !important;
+            }
+
+            .modern-place-bid-btn {
+                padding: 10px 16px !important;
+                font-size: 12px !important;
+            }
+
+            .modern-place-bid-btn i {
+                font-size: 12px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modern-container {
+                margin: 0;
+                padding: 8px;
+                border-radius: 0;
+            }
+
+            .plaza-header {
+                padding: 5px 10px;
+            }
+
+            .plaza-header.scrolled {
+                padding: 4px 10px;
+            }
+
+            /* Ensure scrolled header content stays centered in small mobile */
+            .plaza-header.scrolled .plaza-left {
+                text-align: center !important;
+            }
+
+            .plaza-header.scrolled .plaza-center {
+                justify-content: center !important;
+            }
+
+            .plaza-header.scrolled .plaza-right {
+                justify-content: center !important;
+            }
+
+            .plaza-title {
+                font-size: 13px;
+                text-align: center !important;
+            }
+
+            .plaza-subtitle {
+                font-size: 9px;
+                margin-bottom: 4px;
+                text-align: center !important;
+            }
+
+            .property-title {
+                font-size: 14px;
+                text-align: center !important;
+            }
+
+            .property-price {
+                font-size: 12px;
+                text-align: center !important;
+            }
+
+            .property-info-item {
+                font-size: 10px;
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            .property-badges {
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            .property-badges .label {
+                font-size: 9px;
+                padding: 3px 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modern-container {
+                margin: 0;
+                padding: 10px;
+                border-radius: 0;
+            }
+
+            /* Ensure scrolled header content stays centered in small mobile */
+            .plaza-header.scrolled .plaza-left {
+                text-align: center !important;
+            }
+
+            .plaza-header.scrolled .plaza-center {
+                justify-content: center !important;
+            }
+
+            .plaza-header.scrolled .plaza-right {
+                justify-content: center !important;
+            }
+
+            .property-info-item {
+                font-size: 13px;
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            .property-title {
+                text-align: center !important;
+            }
+
+            .property-price {
+                text-align: center !important;
+            }
+
+            .property-badges {
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            .countdown-container {
+                padding: 2px 8px !important;
+                min-width: 80px !important;
+            }
+
+            .countdown-label {
+                font-size: 6px;
+            }
+
+            .countdown-timer {
+                font-size: 8px;
+            }
+        }
+
+        .size_lg {
+    font-size: 19px !important;
+    border-width: 0px;
+    border-radius: 5px;
+}
+    </style>
+    <!--=================================
+    Listing – grid view -->
+    <section style="padding: 10px 0; min-height: 100vh;">
+        <div class="modern-container">
+            <!-- Plaza Header with Countdown -->
+            <div class="plaza-header">
+                <div class="plaza-left">
+                    <!-- <p class="" style="text-align:center !important">{{$plaza_details->name ?? "Property Auction"}}</p> -->
+                    
+                </div>
+                <div class="plaza-center">
+                    <div class="countdown-container">
+                        <div class="countdown-label">Days:Hr:Min:Sec</div>
+                        <div id="given_date" class="countdown-timer"></div>
+                    </div>
+                </div>
+                <div class="plaza-right">
+
                 </div>
             </div>
-
-            <div class="col-md-8">
-                <div class="section-title mb-3 mb-lg-8">
-                     <h5>{{$plaza_details->name ?? ""}}</h5>
-                    <table >
-                         
-                        <tr>
-                            <td>
-                                <span class="colorDefinition1">Days:Hr:Min:Sec</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span id="given_date"></span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-
-            <div class="col-lg-12">
-
-
-            @foreach($data as $key => $value)
-                <div class="property-item property-col-list mt-4" style="margin-bottom: 24px">
-                    <div class="row no-gutters">
-                        <div class="col-lg-2 col-md-2">
-                            <div class="property-image bg-overlay-gradient-04 ">
-                                <img class="img-fluid" style="height: 150px;" src="{{url("/")."/".$value->attachment}}" alt="">
-                                <div class="property-lable">
-                                    <span class="badge badge-md badge-primary">{{($value->property_type == "plaza") ? "shop" : "plot"}}</span>
-
+            <!-- Property Cards Grid -->
+            <div class="row">
+                <div class="col-12">
+                    @foreach($data as $key => $value)
+                        <div class="property-item property-col-list">
+                            <div class="row no-gutters align-items-stretch">
+                                <!-- Property Image -->
+                                <div class="col-lg-4 col-md-5">
+                                    <div class="modern-property-image">
+                                        <img class="img-fluid" src="{{url("/")."/".$value->attachment}}" alt="{{$value->shop_name}}">
+                                        <div class="property-lable">
+                                            <span class="badge badge-md badge-primary">{{($value->property_type == "plaza") ? "shop" : "plot"}}</span>
+                                        </div>
+                                    </div>
                                 </div>
 
+                                <!-- Property Details -->
+                                <div class="col-lg-8 col-md-7">
+                                    <div class="row h-100">
+                                        <!-- Property Information -->
+                                        <div class="col-lg-7 col-md-12">
+                                            <div class="modern-property-details">
+                                                <h4 class="property-title">
+                                                    <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}">{{$value->shop_name}}</a>
+                                                </h4>
 
-                            </div>
-                        </div>
-                        <div class="col-lg-10 col-md-10">
-                            <div class="property-details">
-                                <div class="property-details-inner">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="property-details-inner-box">
-                                                <div class="property-details-inner-box-left">
-                                                    <h4 class="property-title"><a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}">{{$value->shop_name}} </a></h4>
-                                                    <div class="property-price blink_me" style="font-size: 20px !important; color:black !important;">{{$value->premium}} /{{$value->future_use}} in PKR</span> </div>
-                                                     
-                                                    <div class="property-info-single-line">
-                                                        <span class="info-item"><i class="far fa-square"></i>{{$value->org_name}}</span>
-                                                        <span class="info-separator">•</span>
-                                                        <span class="info-item"><i class="fas fa-map-marker-alt"></i>{{$value->location}}</span>
-                                                        <span class="info-separator">•</span>
-                                                        <span class="info-item"><i class="far fa-square"></i>{{$value->coveredarea}} sqft</span>
-                                                        <span class="info-separator">•</span>
-                                                        <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-success">Details</span></a>
-                                                        <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-primary">Bidders ({{$value->totalBidders}})</span></a>
-                                                        <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}"><span class="label label-warning">Bids ({{$value->totalBidds}})</span></a>
-                                                    </div>
-                                                 <div class="col-md-2"> 
-                                                
-                                                 </div>
+                                                <div class="property-price blink_me">
+                                                    {{$value->premium}} {{--/{{$value->future_use}}--}} in PKR
                                                 </div>
 
+                                                <div class="property-info-grid">
+                                                    <div class="property-info-item">
+                                                        <i class="far fa-building"></i>
+                                                        <span class="property-m-sqft">{{$value->org_name}}</span>
+                                                    </div>
+                                                    <div class="property-info-item">
+                                                        <i class="fas fa-map-marker-alt"></i>
+                                                        <span class="property-address">{{$value->location}}</span>
+                                                    </div>
+                                                    <div class="property-info-item">
+                                                        <i class="far fa-square"></i>
+                                                        <span class="property-m-sqft">Total area: {{$value->coveredarea}} sqft</span>
+                                                    </div>
+                                                </div>
 
-
+                                                <div class="property-badges">
+                                                    <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}" class="label label-success">Details</a>
+                                                    <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}" class="label label-primary">Participants ({{$value->totalBidders}})</a>
+                                                    <a href="{{url("details")."/$auction_id/$value->plaza_id/$value->id".$type}}" class="label label-warning">Bids Received ({{$value->totalBidds}})</a>
+                                                </div>
                                             </div>
                                         </div>
-                                       
-                                        <div class="col-md-6">
+
+                                        <!-- Bidding Section -->
+                                        <div class="col-lg-5 col-md-12">
                                             @if($show_clock)
-                                            <table class="table submit_bid_amount">
-                                                <tr>
-                                                    <td  style="width: 70%">
-                                                        <input type="number" onkeyup="word.innerHTML=convertNumberToWords(this.value)"  id="input_{{$value->id}}" class="form-control entered_amount" placeholder="" >
-                                                        <div id="word" style="  color: red;"></div>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm place_bid" shp_id="{{$value->id}}" auction_id="{{$auction_id}}"  style="width:100%; color:black; padding: 12px 4px; ">Place Bid</a>
-                                                    </td>
-                                                </tr>
-
-                                            </table>
-                                                @endif
+                                                <div class="modern-bid-section h-100 d-flex align-items-center">
+                                                    <div class="bid-input-container w-100">
+                                                        <table class="table submit_bid_amount" style="margin: 0;">
+                                                            <tr>
+                                                                <td style="padding: 0; border: none;">
+                                                                    <div class="modern-bid-input-group">
+                                                                        <div class="bid-amount-container">
+                                                                            <div class="input-wrapper">
+                                                                                <span class="currency-symbol">₨</span>
+                                                                                <input type="number"
+                                                                                       onkeyup="word.innerHTML=convertNumberToWords(this.value)"
+                                                                                       id="input_{{$value->id}}"
+                                                                                       class="form-control entered_amount modern-bid-input"
+                                                                                       placeholder="Enter your bid amount"
+                                                                                       min="1">
+                                                                            </div>
+                                                                            <button type="button"
+                                                                                    class="btn modern-place-bid-btn place_bid"
+                                                                                    shp_id="{{$value->id}}"
+                                                                                    auction_id="{{$auction_id}}">
+                                                                                <i class="fas fa-gavel"></i>
+                                                                                <span>Place Bid</span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="word" class="words-display"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
-
                                     </div>
-
-
-
-
-
-
-
                                 </div>
-
-                                </div>
-
                             </div>
                         </div>
-                    </div>
-
-            @endforeach
-
-
+                    @endforeach
+                </div>
             </div>
-        </div>
-    </div>
+        </div> <!-- End modern-container -->
+    </section>
 
     <div id="submit_cdr_confirmation" class="modal fade" id="submit_cdr_confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -456,14 +1151,63 @@ Listing – grid view -->
             </div>
         </div>
     </div>
-</section>
-<script type="text/javascript" src="{{asset('js/jquery.countdownTimer.js')}}"></script>
-<link rel="stylesheet" type="text/css" href="{{ asset('js/jquery.countdownTimer.css')}}" />
+    </section>
+    <!-- Try to load the original countdown timer -->
+    <script type="text/javascript" src="http://www.eauction.lcbkp.gov.pk/js/jquery.countdownTimer.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.eauction.lcbkp.gov.pk/js/jquery.countdownTimer.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.28/sweetalert2.min.css" integrity="sha512-IScV5kvJo+TIPbxENerxZcEpu9VrLUGh1qYWv6Z9aylhxWE4k4Fch3CHl0IYYmN+jrnWQBPlpoTVoWfSMakoKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.28/sweetalert2.min.js" integrity="sha512-CyYoxe9EczMRzqO/LsqGsDbTl3wBj9lvLh6BYtXzVXZegJ8VkrKE90fVZOk1BNq3/9pyg+wn+TR3AmDuRjjiRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!--=================================
-Listing – grid view -->
+    
+    <!-- Fallback countdown timer implementation -->
+    <script>
+        // Custom countdown timer fallback
+        if (typeof $.fn.countdowntimer === 'undefined') {
+            $.fn.countdowntimer = function(options) {
+                var settings = $.extend({
+                    startDate: new Date(),
+                    dateAndTime: new Date(),
+                    size: "lg",
+                    timeUp: function() {}
+                }, options);
+
+                var element = this;
+                var endTime = new Date(settings.dateAndTime).getTime();
+                
+                function updateCountdown() {
+                    var now = new Date().getTime();
+                    var distance = endTime - now;
+                    
+                    if (distance < 0) {
+                        element.html("EXPIRED");
+                        settings.timeUp();
+                        return;
+                    }
+                    
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    // Format with leading zeros
+                    days = days.toString().padStart(2, '0');
+                    hours = hours.toString().padStart(2, '0');
+                    minutes = minutes.toString().padStart(2, '0');
+                    seconds = seconds.toString().padStart(2, '0');
+                    
+                    element.html(days + ":" + hours + ":" + minutes + ":" + seconds);
+                }
+                
+                // Update immediately and then every second
+                updateCountdown();
+                var interval = setInterval(updateCountdown, 1000);
+                
+                return this;
+            };
+        }
+    </script>
+    <!--=================================
+    Listing – grid view -->
 
     <script>
 
@@ -473,14 +1217,14 @@ Listing – grid view -->
         page_type = "<?php echo $_GET['type'] ?? '' ?>";
 
         $(function(){
-           if(page_type == ""){
-            $("#given_date").countdowntimer({
-                startDate : "{{$auctionStartTime}}",
-                dateAndTime : "{{$auctionEndTime}}",
-                size:"lg",
-                timeUp : timeIsUp
-            });
-           }
+            if(page_type == ""){
+                $("#given_date").countdowntimer({
+                    startDate : "{{$auctionStartTime}}",
+                    dateAndTime : "{{$auctionEndTime}}",
+                    size:"lg",
+                    timeUp : timeIsUp
+                });
+            }
             function timeIsUp() {
 
                 $(".submit_bid_amount").remove();
@@ -499,11 +1243,11 @@ Listing – grid view -->
                 });*/
                 $("body").hide();
 
-                
+
                 setTimeout(function () {
                     alert("Auction is expired");
                     //window.location = BaseUrl+`/property-details/${auction_id}/${plaza_id}?type=rent_out`;
-                   // window.location = "{{route('completedAuctions')}}";
+                    // window.location = "{{route('completedAuctions')}}";
                 },2000);
 
             }
@@ -512,10 +1256,32 @@ Listing – grid view -->
 
 
         $(document).ready(function(){
+            // Sticky header scroll effect
+            $(window).scroll(function() {
+                var scrollTop = $(window).scrollTop();
+                var header = $('.plaza-header');
+
+                if (scrollTop > 50) {
+                    header.addClass('scrolled');
+                } else {
+                    header.removeClass('scrolled');
+                }
+            });
+
+            // Header bid functionality - shows message to select property first
+            $("#header-place-bid").click(function() {
+                var bidAmount = $("#header-bid-input").val();
+                if (!bidAmount || bidAmount == 0) {
+                    alert("Please enter a bid amount");
+                    return;
+                }
+                alert("Please select a specific property below to place your bid");
+            });
+
             $("body").on("click",".place_yes",function(e){
                 // Hide the modal first
                 $("#confirm_place_bid").modal("hide");
-                
+
                 $.ajax({
                     method:"POST",
                     url:"{{url('placeBid')}}",
@@ -553,7 +1319,7 @@ Listing – grid view -->
                     },
                     error: function (request, status, error) {
                         if(request.responseJSON && request.responseJSON.message == "Unauthenticated."){
-                            window.location = BaseUrl+"/login";
+                            window.location = "{{ url('/login') }}";
                         }
                         console.error('AJAX Error:', error);
                     }
@@ -587,7 +1353,7 @@ Listing – grid view -->
             $("body").on("click",".btn_pub_yes",function(e){
                 // Hide modal first
                 $("#submit_cdr_confirmation").modal("hide");
-                
+
                 var url = "{{url('auctions/add-customer-cdr')}}/"+auction_id+"/"+shp_id;
                 window.open(url, '_blank');
             });
@@ -597,21 +1363,21 @@ Listing – grid view -->
             });
 
             //getAuction_details(plaza_id);
-           $("body").on("click",".place_bid",function(e){
+            $("body").on("click",".place_bid",function(e){
 
-             shp_id = $(this).attr("shp_id");
-             auction_id = $(this).attr("auction_id");
-             bid_amount = $("#input_"+shp_id).val();
-             if(bid_amount.trim() == "" || bid_amount == 0){
-                 return false;
-             }
-             words = convertNumberToWords(bid_amount);
-             $(".box_message").text("Are you sure to place this bid ?");
-             $(".amount_in_figure").html(`<b>Rs: ${bid_amount}</b>`);
-             $(".amount_in_text").html(`<b>${words}</b>`);
-             $("#confirm_place_bid").modal("show");
+                shp_id = $(this).attr("shp_id");
+                auction_id = $(this).attr("auction_id");
+                bid_amount = $("#input_"+shp_id).val();
+                if(bid_amount.trim() == "" || bid_amount == 0){
+                    return false;
+                }
+                words = convertNumberToWords(bid_amount);
+                $(".box_message").text("Are you sure to place this bid ?");
+                $(".amount_in_figure").html(`<b>Rs: ${bid_amount}</b>`);
+                $(".amount_in_text").html(`<b>${words}</b>`);
+                $("#confirm_place_bid").modal("show");
 
-           }) ;
+            }) ;
         });
 
         function getAuction_details(plaza_id) {
@@ -719,6 +1485,49 @@ Listing – grid view -->
             console.log(words_string);
             return words_string;
         }
+
+        // Enhanced Sticky Plaza Header Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const plazaHeader = document.querySelector('.plaza-header');
+            const headerHeight = plazaHeader ? plazaHeader.offsetHeight : 0;
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            function updateStickyHeader() {
+                const scrollY = window.scrollY;
+                
+                if (plazaHeader) {
+                    // Add scrolled class when header becomes sticky
+                    if (scrollY > headerHeight) {
+                        plazaHeader.classList.add('scrolled');
+                    } else {
+                        plazaHeader.classList.remove('scrolled');
+                    }
+                }
+                
+                lastScrollY = scrollY;
+                ticking = false;
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(updateStickyHeader);
+                    ticking = true;
+                }
+            }
+
+            // Attach scroll event listener
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            // Initialize on load
+            updateStickyHeader();
+
+            // Ensure sticky positioning works on mobile devices
+            if (plazaHeader) {
+                plazaHeader.style.position = '-webkit-sticky';
+                plazaHeader.style.position = 'sticky';
+            }
+        });
 
     </script>
 
